@@ -1,11 +1,14 @@
-import React from 'react'
-
-function Todos(){
+ 
+function Todos({todos}){
   return (
     <div>
-        <h1>Go to the gym</h1>
-        <h2>You need to go to te gym</h2>
-        <button>Mark as complete </button>
+        {todos.map((todos)=>{
+            return <div>
+                <h1>{todos.title}</h1>
+                <h2>{todos.description}</h2>
+                <button>{todos.complete ==true ? "Completed" : "Mark as complete"}</button>
+            </div>
+        })}
     </div>
   )
 }
